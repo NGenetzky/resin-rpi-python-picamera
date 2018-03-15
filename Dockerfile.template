@@ -3,6 +3,8 @@ FROM resin/%%RESIN_MACHINE_NAME%%-python
 #switch on systemd init system in container
 ENV INITSYSTEM on
 
+ENV READTHEDOCS True
+
 # pip install python deps from requirements.txt
 # For caching until requirements.txt changes
 COPY ./requirements.txt /requirements.txt
