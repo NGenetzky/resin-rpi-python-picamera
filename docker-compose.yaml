@@ -2,12 +2,14 @@ version: '2'
 services:
   capture:
     build: ./capture/
+    privileged: true
     volumes:
       - data-volume:/data
   data_over_http:
     build: ./data_over_http/
     ports:
       - 8080:80
+    privileged: true
     volumes:
       - data-volume:/data
 volumes:
