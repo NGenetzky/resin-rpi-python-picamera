@@ -5,12 +5,10 @@ services:
     volumes:
       - data-volume:/data
   data_over_http:
-    image: resin/%%RESIN_MACHINE_NAME%%-python
-    command: ["python", "-m", "SimpleHTTPServer", "80"]
+    build: ./data_over_http/
     ports:
       - 8080:80
     volumes:
       - data-volume:/data
-    working_dir: /data
 volumes:
   data-volume:
