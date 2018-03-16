@@ -5,7 +5,7 @@ services:
     volumes:
       - data-volume:/data
   data_over_http:
-    image: resin/nuc-python
+    image: resin/%%RESIN_MACHINE_NAME%%-python
     command: ["python", "-m", "SimpleHTTPServer", "80"]
     ports:
       - 8080:80

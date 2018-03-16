@@ -1,4 +1,4 @@
-FROM resin/nuc-python
+FROM resin/%%RESIN_MACHINE_NAME%%-python
 
 ENV READTHEDOCS True
 
