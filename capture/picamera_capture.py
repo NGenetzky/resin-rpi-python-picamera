@@ -1,12 +1,13 @@
-#!/usr/bin/env python
+#!/usr/bin/python
 
 import time
+import picamera
 
-time.sleep(2)
+with picamera.PiCamera() as camera:
+    camera.resolution = (320, 240)
+    # Camera warm-up time
+    time.sleep(2)
+    camera.capture('/data/image.jpg')
 
-with open('/data/image.txt', 'w+') as f:
-    t = 'TextCaptured'
-    print(t)
-    f.write(t)
-
+print 'Picture taken'
 time.sleep(10)
